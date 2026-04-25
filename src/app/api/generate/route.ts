@@ -40,6 +40,6 @@ Name: ${name}, Trade: ${trade}, Experience: ${experience}, Skills: ${skills}, Go
     return NextResponse.json({ resume: resumeText, coverLetter: coverText })
   } catch (err) {
     console.error(err)
-    return NextResponse.json({ error: 'Failed to generate resume.' }, { status: 500 })
+    return NextResponse.json({ error: 'Failed to generate resume.', detail: String(err) }, { status: 500 })
   }
 }
