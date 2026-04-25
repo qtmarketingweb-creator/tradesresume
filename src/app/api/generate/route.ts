@@ -32,8 +32,8 @@ Write the complete resume now.`
 Name: ${name}, Trade: ${trade}, Experience: ${experience}, Skills: ${skills}, Goal: ${goal}, Location: ${location}`
 
     const [resumeMsg, coverMsg] = await Promise.all([
-      client.messages.create({ model: 'claude-sonnet-4-20250514', max_tokens: 1024, messages: [{ role: 'user', content: prompt }] }),
-      client.messages.create({ model: 'claude-sonnet-4-20250514', max_tokens: 512, messages: [{ role: 'user', content: coverPrompt }] }),
+      client.messages.create({ model: 'claude-sonnet-4-5', max_tokens: 1024, messages: [{ role: 'user', content: prompt }] }),
+      client.messages.create({ model: 'claude-sonnet-4-5', max_tokens: 512, messages: [{ role: 'user', content: coverPrompt }] }),
     ])
     const resumeText = resumeMsg.content[0].type === 'text' ? resumeMsg.content[0].text : ''
     const coverText = coverMsg.content[0].type === 'text' ? coverMsg.content[0].text : ''
